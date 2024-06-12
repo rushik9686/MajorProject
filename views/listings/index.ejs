@@ -38,43 +38,41 @@
               <p>Village Stay</p>
             </div>
           </div>
-
-          <div class="toggle">
-            <div class="form-check-reverse form-switch toggle-btn">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
-            </div>
-          </div>
         </div>
+        <i class="fa-solid fa-caret-right forBtn" id="forBtn"></i>
       </div>
-      <i class="fa-solid fa-caret-right" id="forBtn"></i>
-    </div>
 
-
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-4">
-        <% allListings.forEach(listing=> { %>
-          <div class="col mb-4">
-            <a href="/listings/<%= listing._id %>" class="listing-link">
-              <div class="card col listing-card" style="width: 100%;">
-                <img src="<%= listing.image.url %>" class="card-img-top" alt="listing image" style="height: 20rem;">
-                <div class="card-img-overlay"></div>
-                <div class="card-body">
-                  <p class="card-text">
-                    <b>
-                      <%= listing.title %>
-                    </b>
-                    <br>
-                    &#8377; <%= listing.price.toLocaleString("en-IN") %> / night <i class="tax-info">&nbsp; &nbsp; +18%
-                        GST</i>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-4">
+          <% allListings.forEach(listing=> { %>
+            <div class="col mb-4">
+              <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card col listing-card" style="width: 100%;">
+                  <img src="<%= listing.image.url %>" class="card-img-top" alt="listing image" style="height: 20rem;">
+                  <div class="card-img-overlay"></div>
+                  <div class="card-body">
+                    <p class="card-text">
+                      <b>
+                        <%= listing.title %>
+                      </b>
                       <br>
-                      <%= listing.location %>, <%= listing.country %>
-                  </p>
+                      &#8377; <%= listing.price.toLocaleString("en-IN") %> / night <i class="tax-info">&nbsp; &nbsp;
+                          +18%
+                          GST</i>
+                        <br>
+                        <%= listing.location %>, <%= listing.country %>
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <div class="toggle">
+                <div class="form-check-reverse form-switch toggle-btn">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
                 </div>
               </div>
-            </a>
-          </div>
-          <% }) %>
+            </div>
+            <% }) %>
+        </div>
       </div>
-    </div>
   </body>

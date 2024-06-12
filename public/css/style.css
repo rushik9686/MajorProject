@@ -218,35 +218,23 @@ footer{
     display: none;
   }
 
-  #forBtn {
-    font-size: 2.5rem;
+  .forBtn {
+    font-size: 1.5rem;
     cursor: pointer;
-    margin: 40px;
+    margin: 20px;
   }
 
 
 
   /* Media Queries */
   @media (max-width: 1200px) {
-    #forBtn{
+    .forBtn{
       display: none;
     }
   }
 
   @media (max-width: 992px) {
-    #forBtn{
-      display: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .toggle {
-      display: none;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .toggle {
+    .forBtn{
       display: none;
     }
   }
