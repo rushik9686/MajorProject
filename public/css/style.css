@@ -209,4 +209,7 @@ footer{
     .toggle{
       display: none;
     }
+    .search{
+      display: none;
+    }
   }
