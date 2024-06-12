@@ -1,8 +1,6 @@
 <% layout("./layouts/boilerplate.ejs") %>
 
   <body>
-    <div class="gallery-wrap">
-      <div class="gallery">
         <div id="filters">
           <div class="filter">
             <div class="filter-menu">
@@ -38,9 +36,14 @@
               <p>Village Stay</p>
             </div>
           </div>
-        </div>
-        <i class="fa-solid fa-caret-right forBtn" id="forBtn"></i>
-      </div>
+
+          <div class="toggle">
+            <div class="form-check-reverse form-switch toggle-btn">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+            </div>
+          </div>
+
     </div>
 
     <div class="container">
@@ -66,12 +69,6 @@
                 </div>
               </div>
             </a>
-            <div class="toggle">
-              <div class="form-check-reverse form-switch toggle-btn">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
-              </div>
-            </div>
           </div>
           <% }) %>
       </div>
