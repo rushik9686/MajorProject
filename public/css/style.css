@@ -172,22 +172,6 @@ footer{
   .tax-info {
     display: none;
   }
-
-  .toggle-btn {
-    height: 2.5rem;
-    width: 13rem;
-    border: 0.5px solid rgb(26, 25, 25);
-    border-radius: 11px;
-    padding: 0;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .toggle {
-    margin-top: 10px;
-    margin-left: auto;
-  }
-
   .gallery-wrap {
     display: flex;
     align-items: center;
