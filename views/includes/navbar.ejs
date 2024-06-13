@@ -1,7 +1,7 @@
 <style>
   .search-bar {
     border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
+    padding: 0.5rem 3rem;
   }
 
   .search-btn {
@@ -10,7 +10,6 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
-
   }
 
   .search-btn:hover {
@@ -18,9 +17,33 @@
     color: white;
   }
 
-  <style>
-  .navbar {
-    padding: 0.5rem 1rem;
+  @media (max-width: 576px) {
+    .search {
+      display: none;
+    }
+  }
+
+  @media (min-width: 577px) {
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .search {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .navbar-nav {
+    flex-grow: 1;
+    justify-content: space-between;
   }
 
   .navbar-brand {
@@ -28,67 +51,35 @@
   }
 
   .navbar-toggler {
-    flex-grow: 1;
+    order: 1;
   }
 
   .search {
-    flex-grow: 2;
-  }
-
-  @media (max-width: 768px) {
-    .navbar .search {
-      flex-grow: 1;
-    }
-    .navbar-toggler {
-      order: 3;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .navbar .search-bar {
-      width: 100px;
-    }
-    .search-btn {
-      font-size: 0.8rem;
-    }
-  }
-
-  .navbar-nav .nav-link {
-    padding: 0 0.5rem;
-  }
-
-  .search-bar {
-    max-width: 300px;
+    order: 2;
+    margin: 0 auto;
   }
 
   .navbar-collapse {
-    justify-content: flex-end;
-  }
-
-  .container-fluid {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+    order: 3;
   }
 </style>
 
-</style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-    <div class="navbar-nav ms-auto search">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" href="/listings">Explore</a>
+      </div>
+      <div class="navbar-nav ms-auto search">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
       </div>
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Aibnb your home</a>
