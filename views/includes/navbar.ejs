@@ -1,51 +1,75 @@
 <style>
-  .search-bar{
+  .search-bar {
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
   }
-  .search-btn{
+
+  .search-btn {
     background-color: #fe424f;
     color: white;
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    
+
   }
-  .search-btn:hover{
+
+  .search-btn:hover {
     background-color: #fe424f;
     color: white;
+  }
+
+  /* Media query for screens with a max width of 540px */
+  @media (max-width: 540px) {
+    .navbar-nav.ms-auto.search {
+      flex-basis: 100%;
+      margin-bottom: 10px;
+    }
+
+    .navbar-nav.ms-auto.search .form-control {
+      width: 100%;
+    }
+
+    .navbar-nav.ms-auto.search .btn {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .navbar-toggler {
+      margin-left: auto;
+    }
+
+    .collapse.navbar-collapse {
+      margin-top: 10px;
+    }
   }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-      <button class="navbar-toggler" 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navbarNavAltMarkup">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/listings">Explore</a>
-        </div>
-        <div class="navbar-nav ms-auto search">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form> 
-        </div>
-        <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="/listings/new">Aibnb your home</a>
-          <% if(!currUser) {%> 
-            <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-            <a class="nav-link" href="/login"><b>Log In</b></a>
-          <% } %> 
-          <% if(currUser) {%>          
-          <a class="nav-link" href="/logout">Log Out</a>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+    <div class="navbar-nav">
+      <a class="nav-link" href="/listings">Explore</a>
+    </div>
+    <div class="navbar-nav ms-auto search">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Aibnb your home</a>
+        <% if(!currUser) {%>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log In</b></a>
           <% } %>
-        </div>
+            <% if(currUser) {%>
+              <a class="nav-link" href="/logout">Log Out</a>
+              <% } %>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
