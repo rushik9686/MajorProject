@@ -18,29 +18,43 @@
     color: white;
   }
 
-  /* Media query for screens with a max width of 540px */
-  @media (max-width: 540px) {
-    .navbar-nav.ms-auto.search {
-      flex-basis: 100%;
-      margin-bottom: 10px;
+  @media (max-width: 768px) {
+    .navbar-brand {
+      order: 3;
     }
-
-    .navbar-nav.ms-auto.search .form-control {
-      width: 100%;
+    .navbar-nav.mx-auto {
+      order: 1;
+      flex-grow: 1;
+      justify-content: center;
     }
-
-    .navbar-nav.ms-auto.search .btn {
-      width: 100%;
-      margin-top: 5px;
-    }
-
     .navbar-toggler {
-      margin-left: auto;
+      order: 0;
     }
+    .navbar-collapse {
+      order: 2;
+    }
+  }
 
-    .collapse.navbar-collapse {
-      margin-top: 10px;
+  @media (max-width: 576px) {
+    .search-bar {
+      width: 120px; /* Adjust as needed */
     }
+    .search-btn {
+      font-size: 0.8rem;
+    }
+  }
+
+  .navbar-nav .nav-link {
+    display: inline-block;
+    padding: 0 10px; /* Adjust spacing as needed */
+  }
+
+  .search-bar {
+    max-width: 300px; /* Adjust as needed for larger screens */
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
   }
 </style>
 
