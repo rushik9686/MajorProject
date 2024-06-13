@@ -18,26 +18,35 @@
     color: white;
   }
 
+  <style>
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    flex-grow: 1;
+  }
+
+  .navbar-toggler {
+    flex-grow: 1;
+  }
+
+  .search {
+    flex-grow: 2;
+  }
+
   @media (max-width: 768px) {
-    .navbar-brand {
-      order: 3;
-    }
-    .navbar-nav.mx-auto {
-      order: 1;
+    .navbar .search {
       flex-grow: 1;
-      justify-content: center;
     }
     .navbar-toggler {
-      order: 0;
-    }
-    .navbar-collapse {
-      order: 2;
+      order: 3;
     }
   }
 
   @media (max-width: 576px) {
-    .search-bar {
-      width: 120px; /* Adjust as needed */
+    .navbar .search-bar {
+      width: 100px;
     }
     .search-btn {
       font-size: 0.8rem;
@@ -45,25 +54,29 @@
   }
 
   .navbar-nav .nav-link {
-    display: inline-block;
-    padding: 0 10px; /* Adjust spacing as needed */
+    padding: 0 0.5rem;
   }
 
   .search-bar {
-    max-width: 300px; /* Adjust as needed for larger screens */
+    max-width: 300px;
   }
 
   .navbar-collapse {
     justify-content: flex-end;
   }
+
+  .container-fluid {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+</style>
+
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-    <div class="navbar-nav">
-      <a class="nav-link" href="/listings">Explore</a>
-    </div>
     <div class="navbar-nav ms-auto search">
       <form class="d-flex" role="search">
         <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
@@ -74,6 +87,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Aibnb your home</a>
         <% if(!currUser) {%>
